@@ -9,7 +9,12 @@ namespace Lemonade_Stand
     class Program
     {
         static void Main(string[] args)
-        {gvfg
+        {
+            Game game = new Game();
+            game.RunGame();
+
+            
+
         }
     }
 }

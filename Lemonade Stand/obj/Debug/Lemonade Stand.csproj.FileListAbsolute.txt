@@ -1,0 +1,7 @@
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\bin\Debug\Lemonade Stand.exe.config
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\bin\Debug\Lemonade Stand.exe
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\bin\Debug\Lemonade Stand.pdb
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.csprojAssemblyReference.cache
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.csproj.CoreCompileInputs.cache
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.exe
+C:\Users\Danma\Desktop\School\C# VS\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.pdb
