@@ -8,10 +8,14 @@ namespace Lemonade_Stand
 {
     class Game
     {
+        Weather weather = new Weather();
+
+
         public void RunGame()
         {
             GameDirections();
-            GetWeather();
+            StartGamePrompt();
+            
         }
 
         public void GameDirections()
@@ -21,16 +25,19 @@ namespace Lemonade_Stand
 
         }
 
-        public void GetWeather()
+        public void StartGamePrompt()
         {
-            //this is to get the weather forecast for the day
-
-            Weather weather = new Weather();
+            Console.WriteLine(" Here are some starting details for the day. ");
             weather.GetForecast();
+            Console.ReadLine();
+            Console.WriteLine("Current inventory is" );
+            Console.WriteLine("");
 
 
 
         }
+
+
 
 
 
