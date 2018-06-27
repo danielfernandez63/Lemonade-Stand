@@ -13,7 +13,9 @@ namespace Lemonade_Stand
             Game game = new Game();
             game.RunGame();
 
-            
+
+            Store.selllemon(player)
+
 
         }
     }

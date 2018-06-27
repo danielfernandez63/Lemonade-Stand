@@ -8,14 +8,25 @@ namespace Lemonade_Stand
 {
     class Game
     {
-        Day day = new Day();
+        Store store;
+        Player player;
 
+        public Game(){
+
+            Day day = new Day();
+            player = new Player();
+            store = new Store();
+        }
 
         public void RunGame()
         {
             GameDirections();
+
             StartDayPrompt();
-            
+
+            //Store store = new Store();
+           
+
         }
 
         public void GameDirections()
@@ -25,11 +36,12 @@ namespace Lemonade_Stand
 
         }
 
-        public void StartDayPrompt()
+        public static void StartDayPrompt()
         {
-            
+
             Console.WriteLine(" Here are some starting details for the day use this to follow through. ");
-            day.GetForecast();
+            Day day = new Day();
+            day.GetDailyForecast();
             Console.ReadLine();
             // Console.WriteLine("Current inventory is");
             //display inventory
@@ -38,9 +50,10 @@ namespace Lemonade_Stand
         }
 
 
-        public void PurchaseMaterials()
+        public static void PurchaseMaterials()
         {
             string response;
+            //current  amount of money
             Console.WriteLine("Would you like to purchase more materials. 'yes' 'no' before you start for the day. ");
             response = Console.ReadLine().ToLower().Trim();
 
@@ -55,9 +68,9 @@ namespace Lemonade_Stand
                 SetRecipe();
 
             }
-            else 
+            else
             {
-            
+
                 Console.WriteLine("Please follow directions and enter a valid input");
                 PurchaseMaterials();
 
@@ -65,7 +78,7 @@ namespace Lemonade_Stand
 
         }
 
-        public void SetRecipe()
+        public static void SetRecipe()
         {
             string response;
             //display current recipe
@@ -93,35 +106,36 @@ namespace Lemonade_Stand
             }
 
         }
-            public void SetPrice()
+        public static void SetPrice()
+        {
+            string response;
+            //display current price
+
+            Console.WriteLine("Would you like to change  your set price of the product before you start for the day. 'yes' 'no' ");
+            response = Console.ReadLine().ToLower().Trim();
+
+            if (response == "yes")
             {
-                string response;
-                //display current price
-
-                Console.WriteLine("Would you like to change  your set price of the product before you start for the day. 'yes' 'no' ");
-                response = Console.ReadLine().ToLower().Trim();
-
-                if (response == "yes")
-                {
-                    //update price and from there continue
-
-
-                }
-                else if (response == "no")
-                {
-                   //continue 
-
-                }
-                else
-                {
-
-                    Console.WriteLine("Please follow directions and enter a valid input");
-                    SetPrice();
-
-                }
+                //update price and from there continue
 
 
             }
+            else if (response == "no")
+            {
+                //continue 
+
+            }
+            else
+            {
+
+                Console.WriteLine("Please follow directions and enter a valid input");
+                SetPrice();
+
+            }
+
+
+        }
+
 
 
 
