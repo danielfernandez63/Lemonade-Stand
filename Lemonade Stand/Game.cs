@@ -13,7 +13,7 @@ namespace Lemonade_Stand
 
         public Game(){
 
-            Day day = new Day();
+            //Day day = new Day();
             player = new Player();
             store = new Store();
         }
@@ -21,11 +21,7 @@ namespace Lemonade_Stand
         public void RunGame()
         {
             GameDirections();
-
             StartDayPrompt();
-
-            //Store store = new Store();
-           
 
         }
 
@@ -33,35 +29,35 @@ namespace Lemonade_Stand
         {
           Console.WriteLine("Welcome to the lemonade stand game. The object here is to make the maximum amount of money possible in the game... etc");
           Console.ReadLine();
-
         }
 
-        public static void StartDayPrompt()
+        public  void StartDayPrompt()
         {
 
             Console.WriteLine(" Here are some starting details for the day use this to follow through. ");
             Day day = new Day();
+            Console.WriteLine("");
             day.GetDailyForecast();
-            Console.ReadLine();
-            // Console.WriteLine("Current inventory is");
-            //display inventory
-            //Console.ReadLine();
+            Console.WriteLine("");
+            player.GetInventory();
+            Console.WriteLine("");
             PurchaseMaterials();
         }
 
 
-        public static void PurchaseMaterials()
+        public  void PurchaseMaterials()
         {
             string response;
-            //current  amount of money
+
             Console.WriteLine("Would you like to purchase more materials. 'yes' 'no' before you start for the day. ");
             response = Console.ReadLine().ToLower().Trim();
 
             if (response == "yes")
             {
-                //update materials and from the end of that go to change recipe
+                
 
-
+                store.StartShopping(player);
+                SetRecipe();
             }
             else if (response == "no")
             {
@@ -78,7 +74,7 @@ namespace Lemonade_Stand
 
         }
 
-        public static void SetRecipe()
+        public  void SetRecipe()
         {
             string response;
             //display current recipe
@@ -106,7 +102,7 @@ namespace Lemonade_Stand
             }
 
         }
-        public static void SetPrice()
+        public  void SetPrice()
         {
             string response;
             //display current price

@@ -15,9 +15,7 @@ namespace Lemonade_Stand
         public int sugar = 0;
         public double money = 20.00;
 
-      
-
-       
+        //recipe 
 
         public int Lemons
         {
@@ -87,14 +85,20 @@ namespace Lemonade_Stand
                 money = value;
             }
 
+
         }
 
 
+        public void GetInventory()
+        {
+            Console.WriteLine("Current Inventory is:   Lemons: " + Lemons + "      Ice: " + Ice  +  "      Cups: " + Cups + "      Sugar: " + Sugar + "      Money: " + Money);
 
-        //inventory 
-        //recipe 
+        }
+        
 
-        // create inventory method
+        
+
+        
 
 
 

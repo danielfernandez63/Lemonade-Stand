@@ -46,7 +46,6 @@ namespace Lemonade_Stand
             }
 
             Console.WriteLine("The forecast is " + temperature + "° F, with a " + condition + " condition. ");
-            Console.ReadLine();
 
         }
 
@@ -81,8 +80,6 @@ namespace Lemonade_Stand
             }
 
             Console.WriteLine("The actual weather is " + actualTemperature + "° F, with a " + actualCondition + " condition. ");
-            Console.ReadLine();
-
 
         }
 
