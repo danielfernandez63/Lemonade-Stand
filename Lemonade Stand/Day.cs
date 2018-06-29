@@ -8,14 +8,21 @@ namespace Lemonade_Stand
 {
     class Day
     {
-        Weather weather;
-        // list of customers
+        public Weather weather;
+        List<Customers> customers;
 
+            public Day()
+            {
+                weather = new Weather();
+                customers = new List<Customers>();
 
-        public void GetDailyForecast()
+            }
+
+     
+        public void GenerateCustomers()
         {
-            weather = new Weather();
-            weather.GetForecast();
+
+
 
         }
         

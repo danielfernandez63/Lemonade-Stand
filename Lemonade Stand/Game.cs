@@ -11,10 +11,11 @@ namespace Lemonade_Stand
         Store store;
         Player player;
         Day day;
+        int numberOfDays = 7;
+        int currentDay = 1;
 
-        public Game(){
-
-            
+        public Game()
+        {
             player = new Player();
             store = new Store();
         }
@@ -22,7 +23,13 @@ namespace Lemonade_Stand
         public void RunGame()
         {
             GameDirections();
-            StartDayPrompt();
+            while (currentDay <= numberOfDays)
+            {
+                StartDayPrompt();
+                currentDay++;
+            }
+            //finish game method-display
+        
         }
 
         public void GameDirections()
@@ -45,33 +52,41 @@ namespace Lemonade_Stand
 
         public  void StartDayPrompt()
         {
-            Console.WriteLine(" Here are you starting details: ");
+            Console.WriteLine(" Here are you starting details for this day:    " + currentDay);
             day = new Day();
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            day.GetDailyForecast();
-            Console.WriteLine("");
-            player.GetInventory();
-            Console.WriteLine("");
             PurchaseMaterials();
+            SetRecipe();
+            //day.runday function sell lemonade
+            //display results and notify for next day
         }
 
         public  void PurchaseMaterials()
         {
             string response;
-
+            Console.WriteLine("");
+            Console.WriteLine("");
+            player.GetInventory();
+            Console.WriteLine("");
+            player.recipe.DisplayCurrentRecipe(player);
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("Would you like to purchase more materials. 'yes' 'no' before you start for the day. ");
             response = Console.ReadLine().ToLower().Trim();
 
             if (response == "yes")
             {
                 store.StartShopping(player);
-                SetRecipe();
+               
             }
             else if (response == "no")
             {
-                SetRecipe();
+                
+            }
+            else if (response == "")
+            {
+                Console.Clear();
+                PurchaseMaterials();
             }
             else
             {
@@ -85,11 +100,15 @@ namespace Lemonade_Stand
         {
             string response;
             Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("");
             player.GetInventory();
-            day.GetDailyForecast();
-            //display current recipe
             Console.WriteLine("");
             player.recipe.DisplayCurrentRecipe(player);
+            Console.WriteLine("");  
+            day.weather.GetForecast();
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Would you like to change  your recipe or price before you start for the day. 'yes' 'no' ");
             response = Console.ReadLine().ToLower().Trim();
@@ -102,6 +121,11 @@ namespace Lemonade_Stand
             else if (response == "no")
             {
                 
+            }
+            else if (response == "")
+            {
+                //Console.Clear();
+                SetRecipe();
             }
             else
             {
