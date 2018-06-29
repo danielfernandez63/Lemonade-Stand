@@ -12,7 +12,7 @@ namespace Lemonade_Stand
         public int temperature;
         public string condition;
         public int actualTemperature;
-        public string actualCondition;
+        //public string actualCondition;
 
         public void GetForecast()
         {
@@ -49,30 +49,30 @@ namespace Lemonade_Stand
             Random rnd = new Random();
             actualTemperature = rnd.Next(temperature - 10, temperature + 10);
 
-            int cond = rnd.Next(1, 4);
+            //int cond = rnd.Next(1, 4);
 
-            if (cond == 1)
-            {
-                actualCondition = "Hazy";
+            //if (cond == 1)
+            //{
+            //    actualCondition = "Hazy";
 
-            }
-            else if (cond == 2)
-            {
-                actualCondition = "Sunny and Clear";
+            //}
+            //else if (cond == 2)
+            //{
+            //    actualCondition = "Sunny and Clear";
 
-            }
-            else if (cond == 3)
-            {
-                actualCondition = "Rainy";
+            //}
+            //else if (cond == 3)
+            //{
+            //    actualCondition = "Rainy";
 
-            }
-            else
-            {
-                actualCondition = "Cloudy and Overcast";
+            //}
+            //else
+            //{
+            //    actualCondition = "Cloudy and Overcast";
 
-            }
+            //}
 
-            Console.WriteLine("The actual weather is " + actualTemperature + "° F, with a " + actualCondition + " condition. ");
+            Console.WriteLine("The actual weather is " + actualTemperature + "° F, with a " + condition + " condition. ");
 
         }
 

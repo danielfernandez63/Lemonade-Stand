@@ -80,7 +80,7 @@ namespace Lemonade_Stand
 
             if (response == "10")
             {
-                if (player.money > 0.64)
+                if (player.Money > 0.64)
                 {
                     player.Lemons += 10;
                     player.Money -= 0.64;
@@ -97,7 +97,7 @@ namespace Lemonade_Stand
             }
             else if ( response == "30")
             {
-                if (player.money > 2.16)
+                if (player.Money > 2.16)
                 {
                     player.Lemons += 30;
                     player.Money -= 2.16;
@@ -115,7 +115,7 @@ namespace Lemonade_Stand
             else if (response == "75")
             {
                 
-                if (player.money > 4.19)
+                if (player.Money > 4.19)
                 {
                     player.Lemons += 75;
                     player.Money -= 4.19;
@@ -162,7 +162,7 @@ namespace Lemonade_Stand
 
             if (response == "100")
             {
-                if (player.money > 0.88)
+                if (player.Money > 0.88)
                 {
                     player.Ice += 100;
                     player.Money -= 0.88;
@@ -179,7 +179,7 @@ namespace Lemonade_Stand
             }
             else if (response == "250")
             {
-                if (player.money > 2.00)
+                if (player.Money > 2.00)
                 {
                     player.Ice += 250;
                     player.Money -= 2.00;
@@ -197,7 +197,7 @@ namespace Lemonade_Stand
             else if (response == "500")
             {
 
-                if (player.money > 3.66)
+                if (player.Money > 3.66)
                 {
                     player.Ice += 500;
                     player.Money -= 3.66;
@@ -244,7 +244,7 @@ namespace Lemonade_Stand
 
             if (response == "25")
             {
-                if (player.money > 0.86)
+                if (player.Money > 0.86)
                 {
                     player.Cups += 25;
                     player.Money -= 0.86;
@@ -261,7 +261,7 @@ namespace Lemonade_Stand
             }
             else if (response == "50")
             {
-                if (player.money > 1.63)
+                if (player.Money > 1.63)
                 {
                     player.Cups += 50;
                     player.Money -= 1.63;
@@ -279,7 +279,7 @@ namespace Lemonade_Stand
             else if (response == "100")
             {
 
-                if (player.money > 2.75)
+                if (player.Money > 2.75)
                 {
                     player.Cups += 100;
                     player.Money -= 2.75;
@@ -326,7 +326,7 @@ namespace Lemonade_Stand
 
             if (response == "8")
             {
-                if (player.money > 0.51)
+                if (player.Money > 0.51)
                 {
                     player.Sugar += 8;
                     player.Money -= 0.51;
@@ -343,7 +343,7 @@ namespace Lemonade_Stand
             }
             else if (response == "20")
             {
-                if (player.money > 1.64)
+                if (player.Money > 1.64)
                 {
                     player.Sugar += 20;
                     player.Money -= 1.64;
@@ -361,7 +361,7 @@ namespace Lemonade_Stand
             else if (response == "48")
             {
 
-                if (player.money > 3.28)
+                if (player.Money > 3.28)
                 {
                     player.Sugar += 48;
                     player.Money -= 3.28;

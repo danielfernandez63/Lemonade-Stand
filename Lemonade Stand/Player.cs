@@ -9,11 +9,11 @@ namespace Lemonade_Stand
     class Player
     {
         public Recipe recipe;
-        public double lemons = 0;
-        public double ice = 0;
-        public double cups = 0;
-        public double sugar = 0;
-        public double money = 20.00;
+        double lemons = 0;
+        double ice = 0;
+        double cups = 0;
+        double sugar = 0;
+        double money = 20.00;
       
         public Player ()
         {

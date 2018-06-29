@@ -52,10 +52,11 @@ namespace Lemonade_Stand
 
         public  void StartDayPrompt()
         {
-            Console.WriteLine(" Here are you starting details for this day:    " + currentDay);
+            Console.WriteLine(" Here are the starting details for day:    " + currentDay);
             day = new Day();
             PurchaseMaterials();
             SetRecipe();
+            day.weather.GetActualWeather();
             //day.runday function sell lemonade
             //display results and notify for next day
         }

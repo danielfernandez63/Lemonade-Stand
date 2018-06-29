@@ -11,10 +11,10 @@ namespace Lemonade_Stand
         static void Main(string[] args)
         {
             Game game = new Game();
+            RNG rng = new RNG();
+            rng.GenerateRandomNumber(1, 101);
             game.RunGame();
 
-
-            
 
 
         }
