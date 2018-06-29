@@ -9,7 +9,6 @@ namespace Lemonade_Stand
     class Store
     {
            
-
         public Store()
         {
 
@@ -61,7 +60,6 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 StartShopping(player);
             }
-
 
         }
 
@@ -131,7 +129,6 @@ namespace Lemonade_Stand
                     BuyLemons(player);
                 }
 
-
             }
             else if (response == "return")
             {
@@ -145,7 +142,6 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuyLemons(player);
             }
-
 
         }
 
@@ -215,7 +211,6 @@ namespace Lemonade_Stand
                     BuyIce(player);
                 }
 
-
             }
             else if (response == "return")
             {
@@ -229,7 +224,6 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuyIce(player);
             }
-
 
         }
 
@@ -299,7 +293,6 @@ namespace Lemonade_Stand
                     BuyCups(player);
                 }
 
-
             }
             else if (response == "return")
             {
@@ -314,9 +307,7 @@ namespace Lemonade_Stand
                 BuyCups(player);
             }
 
-
         }
-
 
         public void BuySugar(Player player)
         {
@@ -384,12 +375,10 @@ namespace Lemonade_Stand
                     BuySugar(player);
                 }
 
-
             }
             else if (response == "return")
             {
                 StartShopping(player);
-
             }
             else
             {
@@ -398,7 +387,6 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuySugar(player);
             }
-
 
         }
 

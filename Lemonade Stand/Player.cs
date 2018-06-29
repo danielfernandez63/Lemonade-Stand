@@ -8,16 +8,19 @@ namespace Lemonade_Stand
 {
     class Player
     {
-
-        public int lemons = 0;
-        public int ice = 0;
-        public int cups = 0;
-        public int sugar = 0;
+        public Recipe recipe;
+        public double lemons = 0;
+        public double ice = 0;
+        public double cups = 0;
+        public double sugar = 0;
         public double money = 20.00;
+      
+        public Player ()
+        {
+            recipe = new Recipe();
+        }
 
-        //recipe 
-
-        public int Lemons
+        public double Lemons
         {
             get
             {
@@ -31,7 +34,7 @@ namespace Lemonade_Stand
 
         }
 
-        public int Ice
+        public double Ice
         {
             get
             {
@@ -45,7 +48,7 @@ namespace Lemonade_Stand
 
         }
 
-        public int Cups
+        public double Cups
         {
             get
             {
@@ -59,7 +62,7 @@ namespace Lemonade_Stand
 
         }
 
-        public int Sugar
+        public double Sugar
         {
             get
             {
@@ -85,9 +88,7 @@ namespace Lemonade_Stand
                 money = value;
             }
 
-
         }
-
 
         public void GetInventory()
         {
@@ -95,9 +96,16 @@ namespace Lemonade_Stand
 
         }
         
+        public void MakeSell()
+        {
 
-        
+            lemons -= recipe.lemons;
+            Ice -= recipe.ice;
+            Sugar -= recipe.sugar;
+            Cups -= recipe.cups;
+            Money += recipe.price;
 
+        }
         
 
 

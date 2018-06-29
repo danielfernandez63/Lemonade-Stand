@@ -14,15 +14,11 @@ namespace Lemonade_Stand
         public int actualTemperature;
         public string actualCondition;
 
-
-
         public void GetForecast()
         {
             Random rnd = new Random();
             temperature = rnd.Next(50, 105);
             int cond = rnd.Next(1, 4);
-
-
 
             if (cond == 1)
             {
@@ -46,7 +42,6 @@ namespace Lemonade_Stand
             }
 
             Console.WriteLine("The forecast is " + temperature + "° F, with a " + condition + " condition. ");
-
         }
 
         public void GetActualWeather()
@@ -55,8 +50,6 @@ namespace Lemonade_Stand
             actualTemperature = rnd.Next(temperature - 10, temperature + 10);
 
             int cond = rnd.Next(1, 4);
-
-
 
             if (cond == 1)
             {

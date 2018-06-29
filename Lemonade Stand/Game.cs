@@ -10,10 +10,11 @@ namespace Lemonade_Stand
     {
         Store store;
         Player player;
+        Day day;
 
         public Game(){
 
-            //Day day = new Day();
+            
             player = new Player();
             store = new Store();
         }
@@ -42,13 +43,10 @@ namespace Lemonade_Stand
           Console.Clear();
         }
 
-      
-
         public  void StartDayPrompt()
         {
-
             Console.WriteLine(" Here are you starting details: ");
-            Day day = new Day();
+            day = new Day();
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -59,7 +57,6 @@ namespace Lemonade_Stand
             PurchaseMaterials();
         }
 
-
         public  void PurchaseMaterials()
         {
             string response;
@@ -69,22 +66,17 @@ namespace Lemonade_Stand
 
             if (response == "yes")
             {
-                
-
                 store.StartShopping(player);
                 SetRecipe();
             }
             else if (response == "no")
             {
                 SetRecipe();
-
             }
             else
             {
-
                 Console.WriteLine("Please follow directions and enter a valid input");
                 PurchaseMaterials();
-
             }
 
         }
@@ -94,63 +86,35 @@ namespace Lemonade_Stand
             string response;
             Console.Clear();
             player.GetInventory();
-            //Day.GetDailyForecast();
+            day.GetDailyForecast();
             //display current recipe
-
-            Console.WriteLine("Would you like to change  your recipe before you start for the day. 'yes' 'no' ");
+            Console.WriteLine("");
+            player.recipe.DisplayCurrentRecipe(player);
+            Console.WriteLine("");
+            Console.WriteLine("Would you like to change  your recipe or price before you start for the day. 'yes' 'no' ");
             response = Console.ReadLine().ToLower().Trim();
 
             if (response == "yes")
             {
-                //update recipe and from there continue
-
-
+                player.recipe.SetRecipe(player);
+                
             }
             else if (response == "no")
             {
-
-                SetPrice();
+                
             }
             else
             {
-
                 Console.WriteLine("Please follow directions and enter a valid input");
                 SetRecipe();
-
             }
 
         }
-        public  void SetPrice()
-        {
-            string response;
-            //display current price
-
-            Console.WriteLine("Would you like to change  your set price of the product before you start for the day. 'yes' 'no' ");
-            response = Console.ReadLine().ToLower().Trim();
-
-            if (response == "yes")
-            {
-                //update price and from there continue
 
 
-            }
-            else if (response == "no")
-            {
-                //continue 
-
-            }
-            else
-            {
-
-                Console.WriteLine("Please follow directions and enter a valid input");
-                SetPrice();
-
-            }
 
 
-        }
-
-
+        
 
 
     }
