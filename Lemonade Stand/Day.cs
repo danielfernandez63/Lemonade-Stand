@@ -9,17 +9,20 @@ namespace Lemonade_Stand
     class Day
     {
         public Weather weather;
+
         List <Customers> customers;
 
-            public Day(Random rnd)
-            {
-                weather = new Weather();
-                customers = new List<Customers>();
-                GenerateCustomers(rnd);
-            }
+        public Day(RNG rnd)
+        {
+            weather = new Weather();
+            customers = new List<Customers>();
+            GenerateCustomers(rnd);
+            weather.GetForecast();
+            weather.GetActualWeather();
+        }
 
      
-        public void GenerateCustomers(Random Rnd)
+        public void GenerateCustomers(RNG Rnd)
         {
             int min = 60;
             int max = 125;
@@ -37,7 +40,7 @@ namespace Lemonade_Stand
                 max -= 10;
 
             }
-            else if (weather.condition == "Blizzard LOL")
+            else if (weather.condition == "Toxic Smog LOL")
             {
                 min -= 15;
                 max -= 15;
@@ -56,7 +59,7 @@ namespace Lemonade_Stand
 
             }
 
-            int numberOfCustomers = Rnd.Next(min, max);
+            int numberOfCustomers = Rnd.GenerateRandomNumber(min, max);
 
             for (int i = 0; i < numberOfCustomers; i++)
             {
@@ -65,12 +68,48 @@ namespace Lemonade_Stand
 
             }
 
+
+
         }
         
-       
+               
+        public void StartSelling(Player player)
+        {
+            int i;
+            Random rnd = new Random();
+            
+
+            for (i = 0; i < customers.Count; i++)
+            {
+
+                //if()
+                //{
+                //    break;
+                //}
+
+                int chanceToSale = rnd.Next(1, 101);
+
+               
+                 if ((customers[i].percentChanceToBuy < chanceToSale))
+                {
+                    player.MakeSell();
+
+                }
+                else
+                {
 
 
-        
+                }
+
+            }
+
+
+        }
+
+
+        // if ((customers[i].percentChanceToBuy % chanceToSale) != 0)
+
+
 
     }
 }

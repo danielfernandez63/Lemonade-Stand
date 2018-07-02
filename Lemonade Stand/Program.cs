@@ -15,8 +15,6 @@ namespace Lemonade_Stand
             rng.GenerateRandomNumber(1, 101);
             game.RunGame();
 
-
-
         }
     }
 }

@@ -11,13 +11,20 @@ namespace Lemonade_Stand
         public int percentChanceToBuy;
 
 
-        public Customers(Random r)
+        public Customers(RNG Rnd)
         {
-            percentChanceToBuy = r.Next(30, 61);
+            percentChanceToBuy = Rnd.GenerateRandomNumber(30, 61);
 
         }
 
+        public void ChanceBasedOnTemperature()
+        {
+            
 
+//weather  chacne for price   
+
+
+        }
 
 
 

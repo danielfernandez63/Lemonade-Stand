@@ -8,6 +8,7 @@ namespace Lemonade_Stand
 {
     class Game
     {
+        RNG rnd;
         Store store;
         Player player;
         Day day;
@@ -18,6 +19,7 @@ namespace Lemonade_Stand
         {
             player = new Player();
             store = new Store();
+            rnd = new RNG();
         }
 
         public void RunGame()
@@ -53,11 +55,11 @@ namespace Lemonade_Stand
         public  void StartDayPrompt()
         {
             Console.WriteLine(" Here are the starting details for day:    " + currentDay);
-            day = new Day();
+            day = new Day(rnd);
             PurchaseMaterials();
             SetRecipe();
-            day.weather.GetActualWeather();
-            //day.runday function sell lemonade
+            day.weather.DisplayActualWeather();
+            day.StartSelling(player);
             //display results and notify for next day
         }
 
@@ -74,6 +76,7 @@ namespace Lemonade_Stand
             Console.WriteLine("");
             Console.WriteLine("Would you like to purchase more materials. 'yes' 'no' before you start for the day. ");
             response = Console.ReadLine().ToLower().Trim();
+
 
             if (response == "yes")
             {
@@ -107,7 +110,7 @@ namespace Lemonade_Stand
             Console.WriteLine("");
             player.recipe.DisplayCurrentRecipe(player);
             Console.WriteLine("");  
-            day.weather.GetForecast();
+            day.weather.DisplayForecastWeather();
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");

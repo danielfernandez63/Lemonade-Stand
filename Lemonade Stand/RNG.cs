@@ -12,13 +12,13 @@ namespace Lemonade_Stand
 
         public RNG()
         {
-           
+        
 
         }
          
         public int GenerateRandomNumber(int min, int max)
         {
-            Random r = new Random();
+            //Random r = new Random();
             int output = r.Next(min, max);
             return output;
 
