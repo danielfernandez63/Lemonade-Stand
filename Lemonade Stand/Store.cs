@@ -7,13 +7,9 @@ using System.Threading.Tasks;
 namespace Lemonade_Stand
 {
     class Store
-    {
-           
+    {        
         public Store()
-        {
-
-        }
-        
+        {}     
         public void StartShopping(Player player)
         {
             string response;
@@ -27,40 +23,33 @@ namespace Lemonade_Stand
             if (response == "lemons")
             {
                 BuyLemons(player);
-
             }
 
             else if (response == "ice")
             {
                 BuyIce(player);
-
             }
 
             else if (response == "cups")
             {
                 BuyCups(player);
-
             }
 
             else if (response == "sugar")
             {
                 BuySugar(player);
-
             }
 
             else if (response == "done")
             {
                 
-
             }
-
             else 
             {
                 Console.WriteLine("Answer is invalid, read prompt and answer accordingly");
                 Console.ReadLine();
                 StartShopping(player);
             }
-
         }
 
         public void BuyLemons(Player player)
@@ -110,11 +99,9 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyLemons(player);
                 }
-
             }
             else if (response == "75")
-            {
-                
+            {             
                 if (player.Money > 4.19)
                 {
                     player.Lemons += 75;
@@ -128,12 +115,10 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyLemons(player);
                 }
-
             }
             else if (response == "return")
             {
                 StartShopping(player);
-
             }
             else
             {
@@ -142,7 +127,6 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuyLemons(player);
             }
-
         }
 
         public void BuyIce(Player player)
@@ -175,7 +159,6 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyIce(player);
                 }
-
             }
             else if (response == "250")
             {
@@ -192,11 +175,9 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyIce(player);
                 }
-
             }
             else if (response == "500")
             {
-
                 if (player.Money > 3.66)
                 {
                     player.Ice += 500;
@@ -210,12 +191,10 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyIce(player);
                 }
-
             }
             else if (response == "return")
             {
                 StartShopping(player);
-
             }
             else
             {
@@ -224,9 +203,7 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuyIce(player);
             }
-
         }
-
         public void BuyCups(Player player)
         {
             string response;
@@ -257,7 +234,6 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyCups(player);
                 }
-
             }
             else if (response == "50")
             {
@@ -274,11 +250,9 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyCups(player);
                 }
-
             }
             else if (response == "100")
             {
-
                 if (player.Money > 2.75)
                 {
                     player.Cups += 100;
@@ -292,12 +266,10 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuyCups(player);
                 }
-
             }
             else if (response == "return")
             {
                 StartShopping(player);
-
             }
             else
             {
@@ -306,7 +278,6 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuyCups(player);
             }
-
         }
 
         public void BuySugar(Player player)
@@ -339,7 +310,6 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuySugar(player);
                 }
-
             }
             else if (response == "20")
             {
@@ -356,11 +326,9 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuySugar(player);
                 }
-
             }
             else if (response == "48")
             {
-
                 if (player.Money > 3.28)
                 {
                     player.Sugar += 48;
@@ -374,7 +342,6 @@ namespace Lemonade_Stand
                     Console.WriteLine("You do not have the sufficient funds, alter amount or return.");
                     BuySugar(player);
                 }
-
             }
             else if (response == "return")
             {
@@ -387,20 +354,7 @@ namespace Lemonade_Stand
                 Console.ReadLine();
                 BuySugar(player);
             }
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

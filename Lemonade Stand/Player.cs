@@ -14,12 +14,27 @@ namespace Lemonade_Stand
         double cups = 0;
         double sugar = 0;
         double money = 20.00;
+        double cupsSold = 0.00;
+        double totalCupsSold = 0.00;
       
         public Player ()
         {
             recipe = new Recipe();
         }
 
+        public double TotalCupsSold
+        {
+            get
+            {
+                return totalCupsSold;
+            }
+
+            set
+            {
+                totalCupsSold = value;
+            }
+
+        }
         public double Lemons
         {
             get
@@ -30,6 +45,20 @@ namespace Lemonade_Stand
             set
             {
                 lemons = value;
+            }
+
+        }
+
+        public double CupsSold
+        {
+            get
+            {
+                return cupsSold;
+            }
+
+            set
+            {
+                cupsSold = value;
             }
 
         }
@@ -104,11 +133,42 @@ namespace Lemonade_Stand
             Sugar -= recipe.sugar;
             Cups -= recipe.cups;
             Money += recipe.price;
-
+            CupsSold += 1;
+            TotalCupsSold += 1;
         }
         
+        public void DisplayWeeklyAmount()
+        {
+            double response = money; 
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("You sold a total of " + TotalCupsSold + " cups of lemonade so far! ");
+            Console.WriteLine("");
+            Console.WriteLine("Total amount of money you have made so far: " + (response-=20).ToString("C"));
+            Console.ReadLine();
+        }
 
+        public void DisplayFinalAmount()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Congratulations, you have finished the game!");
+            Console.WriteLine("");
+            Console.WriteLine("Thank you for playing");
+            Console.ReadLine();
+        }
 
+        public void DisplayDailyAmount()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("You sold a total of " + CupsSold + " cups today! Wow");
+            Console.WriteLine("");
+            Console.WriteLine("You made a total of $" + (CupsSold * recipe.price) + " today!");
+            Console.WriteLine("");
+        }
+        
 
     }
 }

@@ -8,11 +8,11 @@ namespace Lemonade_Stand
 {
     class Game
     {
-        RNG rnd;
+        public RNG rnd;
         Store store;
         Player player;
         Day day;
-        int numberOfDays = 7;
+        public int numberOfDays = 7;
         int currentDay = 1;
 
         public Game()
@@ -30,8 +30,8 @@ namespace Lemonade_Stand
                 StartDayPrompt();
                 currentDay++;
             }
-            //finish game method-display
-        
+            Console.Clear();
+            player.DisplayFinalAmount();
         }
 
         public void GameDirections()
@@ -54,13 +54,18 @@ namespace Lemonade_Stand
 
         public  void StartDayPrompt()
         {
+            Console.Clear();
             Console.WriteLine(" Here are the starting details for day:    " + currentDay);
             day = new Day(rnd);
             PurchaseMaterials();
             SetRecipe();
+            Console.WriteLine("");
+            Console.WriteLine("Hit enter when you are ready to start selling!");
+            Console.ReadLine();
             day.weather.DisplayActualWeather();
             day.StartSelling(player);
-            //display results and notify for next day
+            player.DisplayDailyAmount();
+            player.DisplayWeeklyAmount();
         }
 
         public  void PurchaseMaterials()
@@ -127,8 +132,7 @@ namespace Lemonade_Stand
                 
             }
             else if (response == "")
-            {
-                //Console.Clear();
+            {            
                 SetRecipe();
             }
             else
@@ -138,11 +142,6 @@ namespace Lemonade_Stand
             }
 
         }
-
-
-
-
-        
 
 
     }

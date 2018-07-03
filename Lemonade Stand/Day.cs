@@ -9,7 +9,6 @@ namespace Lemonade_Stand
     class Day
     {
         public Weather weather;
-
         List <Customers> customers;
 
         public Day(RNG rnd)
@@ -18,14 +17,14 @@ namespace Lemonade_Stand
             customers = new List<Customers>();
             GenerateCustomers(rnd);
             weather.GetForecast();
-            weather.GetActualWeather();
+            weather.GetActualWeather();                    
         }
 
      
         public void GenerateCustomers(RNG Rnd)
         {
-            int min = 60;
-            int max = 125;
+            int min = 40;
+            int max = 100;
 
             if(weather.condition == "Sunny")
             {
@@ -40,7 +39,7 @@ namespace Lemonade_Stand
                 max -= 10;
 
             }
-            else if (weather.condition == "Toxic Smog LOL")
+            else if (weather.condition == "Toxic Smog (LOL)")
             {
                 min -= 15;
                 max -= 15;
@@ -52,11 +51,10 @@ namespace Lemonade_Stand
                 max -= 0;
 
             }
-            else if (weather.condition == "Drought")
+            else if (weather.condition == "Drought like")
             {
                 min += 15;
                 max += 15;
-
             }
 
             int numberOfCustomers = Rnd.GenerateRandomNumber(min, max);
@@ -64,52 +62,64 @@ namespace Lemonade_Stand
             for (int i = 0; i < numberOfCustomers; i++)
             {
                 customers.Add(new Customers(Rnd));
-
-
             }
 
-
-
-        }
-        
+        }       
                
         public void StartSelling(Player player)
         {
             int i;
             Random rnd = new Random();
-            
 
+            player.CupsSold = 0;
             for (i = 0; i < customers.Count; i++)
             {
+                customers[i].ChanceBasedOnTemperature(weather);
+                customers[i].ChanceBasedOnPrice(player.recipe);
 
-                //if()
-                //{
-                //    break;
-                //}
+                if (player.Ice < player.recipe.ice)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Oh no, you ran out of ice and had to stop selling for the day! Plan ahead and purchase what you may need for the day!");
+                    Console.ReadLine();
+                    break;
+                }
+                if (player.Sugar < player.recipe.sugar)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Oh no, you ran out of sugar and had to stop selling for the day! Plan ahead and purchase what you may need for the day!");
+                    Console.ReadLine();
+                    break;
+                }
+                if (player.Lemons < player.recipe.lemons)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Oh no, you ran out of lemons and had to stop selling for the day! Plan ahead and purchase what you may need for the day!");
+                    Console.ReadLine();
+                    break;
+                }
+                if (player.Cups < player.recipe.cups)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Oh no, you ran out of cups and had to stop selling for the day! Plan ahead and purchase what you may need for the day!");
+                    Console.ReadLine();
+                    break;
+                }
 
                 int chanceToSale = rnd.Next(1, 101);
-
                
-                 if ((customers[i].percentChanceToBuy < chanceToSale))
+                 if ((customers[i].percentChanceToBuy > chanceToSale))
                 {
                     player.MakeSell();
-
                 }
                 else
                 {
 
-
                 }
-
             }
-
 
         }
 
-
-        // if ((customers[i].percentChanceToBuy % chanceToSale) != 0)
-
-
-
     }
+
 }

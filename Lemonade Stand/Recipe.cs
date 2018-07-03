@@ -13,20 +13,16 @@ namespace Lemonade_Stand
         public double cups = 1;
         public double sugar = .5;
         public double price = 0.30;
-
         public Recipe()
         {
 
         }
-
         public void DisplayCurrentRecipe(Player player)
         {
              
             Console.WriteLine("Current Recipe per cup of lemonade is:       Cups: " + cups    + "        Ice per cup: " + ice + "         Lemons per cup: " + lemons + "          Cups of sugar per cup of lemonade: " + sugar + "           Price per cup: " + price);
 
-        }
-       
-
+        }    
         public void SetRecipe(Player player)
         {
             string response;
@@ -54,7 +50,6 @@ namespace Lemonade_Stand
                 Console.WriteLine("Change was succesful!");
                 Console.ReadLine();
                 SetRecipe(player);
-
             }
             else if (response == "sugar")
             {
@@ -63,9 +58,7 @@ namespace Lemonade_Stand
                 Console.WriteLine("Change was succesful!");
                 Console.ReadLine();
                 SetRecipe(player);
-
             }
-
             else if (response == "price")
             {
                 Console.WriteLine("Price per cup of lemonade? ");
@@ -73,11 +66,9 @@ namespace Lemonade_Stand
                 Console.WriteLine("Change was succesful!");
                 Console.ReadLine();
                 SetRecipe(player);
-
             }
             else if (response == "done")
             {
-
 
             }
             else 
@@ -85,35 +76,10 @@ namespace Lemonade_Stand
                 Console.WriteLine("You did not follow directions and enter a valid response. Please alter answer and respond.");
                 Console.ReadLine();
                 SetRecipe(player);
-
             }
-
-
-
-
-
-
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
 }
